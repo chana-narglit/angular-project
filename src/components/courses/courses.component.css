@@ -1,0 +1,28 @@
+.course-card, .no-course-card, .form-card, .lesson-card, .course-list-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .course-card mat-card-title, .lesson-card mat-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3f51b5;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    display: block;
+  }
+  

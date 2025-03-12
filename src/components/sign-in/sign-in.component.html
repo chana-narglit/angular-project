@@ -1,0 +1,30 @@
+<div class="form-container">
+  <mat-card class="form-card">
+    <h2>Sign Up</h2>
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="" disabled>בחר תפקיד</mat-option>
+          <mat-option value="student">Student</mat-option>
+          <mat-option value="teacher">Teacher</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit">Sign Up</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

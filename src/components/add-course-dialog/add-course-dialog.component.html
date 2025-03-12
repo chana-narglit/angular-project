@@ -1,0 +1,15 @@
+<h2>הוספת קורס חדש</h2>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <mat-form-field>
+    <mat-label>שם הקורס</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>תיאור הקורס</mat-label>
+    <input matInput formControlName="description">
+  </mat-form-field>
+  <div class="button-container">
+    <button mat-raised-button color="primary" type="submit">שמור</button>
+    <button mat-raised-button color="warn" type="button" (click)="close()">ביטול</button>
+  </div>
+</form>

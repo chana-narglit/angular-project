@@ -1,0 +1,10 @@
+@for(course of courses;track course.id)
+{
+    <mat-card class="course-list-card">
+        <mat-card-content>
+          <button mat-raised-button color="primary" [routerLink]="['/courses', course.id]">{{ course.title }}</button>
+        </mat-card-content>
+      </mat-card>
+}
+<button mat-raised-button color="primary" [routerLink]="['/courses']">לכל הקורסים</button>
+

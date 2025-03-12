@@ -1,0 +1,179 @@
+<!-- <div class="container">
+    <h1>ברוכים הבאים למערכת הקורסים</h1>
+    @if(role === 'teacher' && !open())
+    {
+    <button mat-raised-button color="primary" (click)="openForm()">
+        הוספת קורס חדש
+    </button>
+    }
+    @for(course of courses;track course)
+    {
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ course.description }}</p>
+            <p><strong>מורה:</strong> {{ course.teacherId }}</p>
+        </mat-card-content>
+        <mat-card-actions class="button-container">
+            <button mat-raised-button color="accent" [routerLink]="['/courses', course.id]">
+                פרטי קורס
+            </button>
+            @if("role === 'student'")
+            {
+            <ng-container>
+                @if(!course.registered)
+                {
+                <button mat-raised-button color="primary" (click)="joinCourse(course.id)">
+                    הצטרף
+                </button>
+                }
+                @if(course.registered)
+                {
+                <button mat-raised-button color="warn" (click)="leaveCourse(course.id)">
+                    עזוב
+                </button>
+                }
+            </ng-container>
+            }
+        </mat-card-actions>
+    </mat-card>
+    }
+    @if(open())
+    {
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="myForm" (ngSubmit)="addCourse()">
+                <mat-form-field>
+                    <mat-label>שם הקורס</mat-label>
+                    <input matInput formControlName="title">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>תיאור הקורס</mat-label>
+                    <input matInput formControlName="description">
+                </mat-form-field>
+                <div class="button-container">
+                    <button mat-raised-button color="primary" type="submit">שמור</button>
+                    <button mat-raised-button color="warn" type="button" (click)="open.set(false)">ביטול</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    }
+</div> -->
+<!-- 
+<div class="container">
+    <h1>ברוכים הבאים למערכת הקורסים</h1>
+    @if(role === 'teacher')
+    {
+    <div class="form-container">
+        <button mat-raised-button color="primary" (click)="open.set(true)">
+            הוספת קורס חדש
+        </button>
+    </div>
+    }
+
+    @for(course of courses;track course.id)
+    {
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ course.description }}</p>
+            <p><strong>מורה:</strong> {{ course.teacherId }}</p>
+        </mat-card-content>
+        <mat-card-actions class="button-container">
+            <button mat-raised-button color="accent" [routerLink]="['/courses', course.id]">
+                פרטי קורס
+            </button>
+            @if(role === 'student')
+            {
+            <ng-container>
+                @if(!course.registered)
+                {
+                <button mat-raised-button color="primary" (click)="joinCourse(course.id)">
+                    הצטרף
+                </button>
+                }
+                if(course.registered)
+                {
+                <button mat-raised-button color="warn" (click)="leaveCourse(course.id)">
+                    עזוב
+                </button>
+                }
+            </ng-container>
+            }
+        </mat-card-actions>
+    </mat-card>
+    }
+    @if(open())
+    {
+    <mat-dialog>
+        <mat-dialog-content>
+            <h2>הוספת קורס חדש</h2>
+            <form [formGroup]="myForm" (ngSubmit)="addCourse()">
+                <mat-form-field>
+                    <mat-label>שם הקורס</mat-label>
+                    <input matInput formControlName="title">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>תיאור הקורס</mat-label>
+                    <input matInput formControlName="description">
+                </mat-form-field>
+                <div class="button-container">
+                    <button mat-raised-button color="primary" type="submit">שמור</button>
+                    <button mat-raised-button color="warn" type="button" (click)="open.set(false)">ביטול</button>
+                </div>
+            </form>
+        </mat-dialog-content>
+    </mat-dialog>
+    }
+</div> -->
+
+<div class="container">
+    <h1>ברוכים הבאים למערכת הקורסים</h1>
+    @if(role === 'teacher')
+    {
+    <div class="form-container">
+        <button mat-raised-button color="primary" (click)="openForm()">
+            הוספת קורס חדש
+        </button>
+    </div>
+    }
+    @for(course of courses;track course.id)
+    {
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ course.description }}</p>
+            <p><strong>מורה:</strong> {{ course.teacherId }}</p>
+        </mat-card-content>
+        <mat-card-actions class="button-container">
+            <button mat-raised-button color="accent" [routerLink]="['/courses', course.id]">
+                פרטי קורס
+            </button>
+            @if(role === 'student')
+            {
+            <ng-container>
+                @if(!course.registered)
+                {
+                <button mat-raised-button color="primary" (click)="joinCourse(course.id)">
+                    הצטרף
+                </button>
+                }
+                @if(course.registered)
+                {
+                <button mat-raised-button color="warn" (click)="leaveCourse(course.id)">
+                    עזוב
+                </button>
+                }
+            </ng-container>
+            }
+        </mat-card-actions>
+    </mat-card>
+    }
+</div>

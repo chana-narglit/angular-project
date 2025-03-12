@@ -1,0 +1,41 @@
+@for(course of courses;track course)
+{
+<div>
+    <mat-card class="course-list-card">
+        <mat-card-content>
+            <button mat-raised-button color="accent" [routerLink]="['/courses', course.id]">{{ course.title }}</button>
+            @if(userId==course.teacherId&&!open())
+            {
+            <button mat-icon-button color="warn" (click)="toEdit(course.id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteCourse(course.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            }
+        </mat-card-content>
+    </mat-card>
+</div>
+}
+@if(role==='teacher'&&!open())
+{
+<ng-container>
+    <button mat-raised-button color="primary" (click)="openForm()">add course</button>
+</ng-container>
+}
+@if(open())
+{
+    <mat-card class="form-card">
+        <form [formGroup]="myForm" (ngSubmit)="editId === -1 ? addCourse() : editCourse()">
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">send</button>
+        </form>
+      </mat-card>
+}
