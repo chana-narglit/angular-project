@@ -1,0 +1,16 @@
+.lesson-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .lesson-card {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }

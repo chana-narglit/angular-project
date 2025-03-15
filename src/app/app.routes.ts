@@ -4,7 +4,7 @@ import { CoursesComponent } from '../components/courses/courses.component';
 import { LoginComponent } from '../components/login/login.component';
 import { SignInComponent } from '../components/sign-in/sign-in.component';
 import { CourseDetailsComponent } from '../components/course-details/course-details.component';
-import { LessonComponent } from '../components/lesson/lesson.component';
+import { LessonListComponent  } from '../components/lesson-list/lesson-list.component';
 import { HomePageComponent } from '../components/home-page/home-page.component';
 
 export const routes: Routes = [
@@ -14,6 +14,6 @@ export const routes: Routes = [
    {path:'login',component:LoginComponent},
    {path:'signIn',component:SignInComponent},
    { path: 'courses/:id', component: CourseDetailsComponent },
-   {path:'courses/:id/lessons',component:LessonComponent}
+   {path:'courses/:id/lessons',component:LessonListComponent}
 ];
 

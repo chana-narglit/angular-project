@@ -1,0 +1,53 @@
+<!-- <div class="lesson-container">
+  <h1>רשימת שיעורים</h1>
+  
+  @if(role === 'teacher') {
+    <button mat-raised-button color="primary" (click)="openAddLessonDialog()">
+      הוספת שיעור חדש
+    </button>
+  }
+
+  @for(lesson of lessons;track lesson) {
+    <mat-card class="lesson-card">
+      <mat-card-header>
+        <mat-card-title>{{ lesson.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ lesson.content }}</p>
+      </mat-card-content>
+      @if(role === 'teacher') {
+        <mat-card-actions class="button-container">
+          <button mat-raised-button color="warn" (click)="deleteLesson(lesson.id)">
+            מחק שיעור
+          </button>
+        </mat-card-actions>
+      }
+    </mat-card>
+  }
+</div>
+if( isDialogOpen )
+<dialog-component (close)="isDialogOpen = false" (save)="addLesson($event)"></dialog-component> -->
+<div class="lesson-container">
+  <h2>רשימת שיעורים</h2>
+  @if(role === 'teacher')
+  {
+  <button mat-raised-button color="primary" (click)="openAddLessonDialog()">➕ הוספת שיעור</button>
+  }
+  @for(lesson of lessons;track lesson)
+  {
+  <mat-card class="lesson-card">
+    <mat-card-header>
+      <mat-card-title>{{ lesson.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ lesson.content }}</p>
+    </mat-card-content>
+    @if(role === 'teacher')
+    {
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="deleteLesson(lesson.id)">🗑️ מחק שיעור</button>
+    </mat-card-actions>
+    }
+  </mat-card>
+  }
+</div>
